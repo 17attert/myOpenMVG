@@ -80,6 +80,9 @@ target_link_libraries(openMVG_main_ConvertMatches
   ${STLPLUS_LIBRARY}
 )
 
+set_property(TARGET openMVG_main_ConvertMatches PROPERTY FOLDER OpenMVG/software)
+install(TARGETS openMVG_main_ConvertMatches DESTINATION bin/)
+
 add_executable(openMVG_main_benchANN main_benchANN.cpp)
 target_link_libraries(openMVG_main_benchANN
   PRIVATE
