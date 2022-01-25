@@ -13,6 +13,7 @@
 #ifndef OPENMVG_MATCHING_METRIC_SIMD_HPP
 #define OPENMVG_MATCHING_METRIC_SIMD_HPP
 
+#if defined(__x86_64__)
 #include <array>
 #include <numeric>
 
@@ -87,6 +88,10 @@ inline float L2_AVX
   return std::accumulate(acc_float, acc_float + 8, 0.f);
 }
 #endif // OPENMVG_USE_AVX
+#else
+// Abort unimplemented
+#endif
+
 
 }  // namespace matching
 }  // namespace openMVG
